@@ -1,75 +1,66 @@
-# React + TypeScript + Vite
+# 🛒 NexStore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web de e-commerce desenvolvida com React e TypeScript, com integração à Fake Store API para consulta e exibição dinâmica de produtos.
 
-Currently, two official plugins are available:
+O projeto foi desenvolvido com foco na prática de desenvolvimento Front-end, consumo de APIs REST, componentização, tipagem com TypeScript e criação de funcionalidades de catálogo.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🎯 Objetivo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+O objetivo do projeto é desenvolver uma aplicação de e-commerce capaz de consumir dados de produtos de uma API externa e disponibilizá-los de forma dinâmica para o usuário.
 
-## Expanding the ESLint configuration
+A aplicação permite pesquisar produtos, filtrar por categoria e definir uma faixa de preço, além de possibilitar a adição de produtos ao carrinho.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ✨ Funcionalidades
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- 📦 Consulta de produtos através da Fake Store API
+- 🔎 Pesquisa de produtos por nome
+- 🏷️ Filtro por categoria
+- 💰 Filtro por preço mínimo e máximo
+- 🛒 Adição de produtos ao carrinho
+- 🔢 Controle da quantidade de produtos adicionados
+- ⏳ Indicador de carregamento durante a consulta da API
+- 📱 Estrutura preparada para desenvolvimento de uma interface responsiva
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
 
-```
+## 🛠️ Tecnologias
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **React** — construção da interface e componentes
+- **TypeScript** — tipagem estática e maior segurança no desenvolvimento
+- **Vite** — ferramenta de build e desenvolvimento
+- **Fake Store API** — fornecimento dos dados dos produtos
+- **REST API** — comunicação com serviço externo
+- **ESLint** — padronização e análise do código
+- **Git/GitHub** — versionamento e gerenciamento do projeto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🧩 Estrutura do projeto
 
-```
+```text
+src/
+├── components/
+│   ├── ProductCard.tsx
+│   └── ProductList.tsx
+│
+├── hooks/
+│   └── useProducts.ts
+│
+├── pages/
+│   └── CatalogPage.tsx
+│
+├── services/
+│   └── products.ts
+│
+├── types/
+│   ├── cartItem.ts
+│   └── product.ts
+│
+├── App.tsx
+├── Button.tsx
+├── main.tsx
+└── OlaNexstore.tsx
